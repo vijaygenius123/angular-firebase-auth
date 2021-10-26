@@ -13,11 +13,15 @@ export class AuthService {
   }
 
   signOut(){
-    this.aFAuth.signOut()
+    return this.aFAuth.signOut()
   }
 
   async signInWithGoogle(){
     const provider = new GoogleAuthProvider();
+    return await this.signInWithProvider(provider)
+  }
+
+  async signInWithProvider(provider: any){
     const credential = await this.aFAuth.signInWithPopup(provider)
     return credential.user
   }
