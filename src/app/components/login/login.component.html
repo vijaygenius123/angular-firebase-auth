@@ -1,0 +1,9 @@
+
+
+<div *ngIf="authService.user$ | async as user; else login" >
+  <button class="btn btn-danger" (click)="authService.signOut()">Logout</button>
+</div>
+
+<ng-template #login>
+  <button class="btn btn-primary" (click)="authService.signInWithGoogle()">Sign In With Google</button>
+</ng-template>
