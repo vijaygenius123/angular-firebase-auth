@@ -9,7 +9,7 @@ import {AuthService} from "./services/auth.service";
 export class AppComponent {
   title = 'angular-firebase-auth';
 
-  constructor(public auth: AuthService) {
+  constructor(public authService: AuthService) {
 
   }
 }
